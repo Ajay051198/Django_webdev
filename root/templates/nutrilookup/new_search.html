@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 style="text-align: center">{{ name | title }}</h2>
+
+<div class="row">
+    <table>
+        <thead>
+        <tr>
+            <th>Nutrient</th>
+            <th>Value (Unit)</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for each in data_db %}
+        <tr>
+            <td>{{each.Nutrient}}</td>
+            <td>{{each.Value}}  {{each.Unit}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}

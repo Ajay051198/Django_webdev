@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Base Web-page for nutrilookup</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<head>
+    <meta charset="UTF-8">
+    <title>MAIN_WEB_PAGE_NUTRILOOKUP</title>
+</head>
+<body>
+
+
+<nav>
+    <div class="container nav-wrapper ">
+        <a href="/" class="brand-logo" style="color: white">Nutrilookup<i class="material-icons">all_inclusive</i></a>
+        <ul id="nav-mobile" class="right">
+            <li><a href="/">Home</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 style="text-align: center"><font size="10">What do you want to search for on Nutrilookup?</font></h1>
+    <div class="row">
+        <div class="col s4">
+            <div class="center">
+                <i class="large material-icons" style="color: #EE6E73">first_page</i>
+                <p class="light center">Search away with any food item to get detailed composition breakdown.</p>
+            </div>
+        </div>
+        <div class="col s4">
+            <div class="center">
+                <i class="large material-icons" style="color: #EE6E73">folder_open</i>
+                <p class="light center">Retrieves Data using USDA API</p>
+            </div>
+        </div>
+        <div class="col s4">
+            <div class="center">
+                <i class="large material-icons" style="color: #EE6E73">favorite_border</i>
+                <p class="light center">First Django project by AJ, made with pride!! </p>
+            </div>
+        </div>
+    </div>
+
+    <form action="{% url 'new_search' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="search" placeholder="Enter the food item here">
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+    {% block content %}
+
+    {% endblock content %}
+</div>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Aj Projects</h5>
+                    <p class="grey-text text-lighten-4">You can find the links to the resources here</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="https://fdc.nal.usda.gov/index.html">
+                            <i class="tiny material-icons">business</i>  USDA Database</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://github.com/Ajay051198/Django_webdev">
+                            <i class="tiny material-icons">cloud</i>  Github Link</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://twitter.com/Just__Ajay">
+                            <i class="tiny material-icons">call_missed</i>  MyTwitter :O</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © copyright AJ projects
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
