@@ -1,6 +1,6 @@
 import requests
 Debug = True
-key = 'DUVrhfkiQygwj18fesQvdwpgbPbrAjP1QDfD9lgt'
+key = 'Message me for the key'
 
 
 def search_item(item):
