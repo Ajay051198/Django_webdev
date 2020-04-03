@@ -1,6 +1,6 @@
 import requests
-Debug = True
-key = 'Message me for the key'
+Debug = False
+key = 'Message for key'
 
 
 def search_item(item):
@@ -26,7 +26,7 @@ def search_item(item):
         context = {'name': name,
                    'data_db': data_db}
 
-    except IndexError:
+    except:
         context = {'name': 'Item not found in the database',
                    'data_db': None}
 
